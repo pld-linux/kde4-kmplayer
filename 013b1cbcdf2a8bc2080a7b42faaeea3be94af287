@@ -1,0 +1,3 @@
+- init with version 0.11.0-rc1
+- Pre release for KDE4. Working backend players are MPlayer, Phonon and the
+  Mozilla plugin loader. An addition feature is load on demand for the plugins.
