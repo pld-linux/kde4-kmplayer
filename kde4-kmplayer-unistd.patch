@@ -1,0 +1,11 @@
+diff -uNr kmplayer-0.11.0-rc1.orig/src/kmplayer_part.cpp kmplayer-0.11.0-rc1/src/kmplayer_part.cpp
+--- kmplayer-0.11.0-rc1.orig/src/kmplayer_part.cpp	2008-11-06 01:23:04.850294567 +0100
++++ kmplayer-0.11.0-rc1/src/kmplayer_part.cpp	2008-11-06 01:25:01.987947266 +0100
+@@ -47,6 +47,7 @@
+ #include "kmplayerconfig.h"
+ #include "kmplayerprocess.h"
+ #include "viewarea.h"
++#include "unistd.h"
+ 
+ using namespace KMPlayer;
+ 
