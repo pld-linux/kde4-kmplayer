@@ -80,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT \
-        kde_htmldir=%{_kdedocdir}
+	kde_htmldir=%{_kdedocdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -101,6 +101,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kmplayer/kmplayerui.rc
 %{_datadir}/apps/kmplayer/noise.gif
 %{_datadir}/apps/kmplayer/pluginsinfo
+# XXX: find_lang?
 %{_docdir}/kde/HTML/en/doc/*
 
 %files icons-oxygen
