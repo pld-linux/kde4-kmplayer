@@ -5,12 +5,12 @@
 Summary:	A KDE MPlayer/Xine/ffmpeg/ffserver/VDR frontend
 Summary(pl.UTF-8):	Frontend dla programów MPlayer/Xine/ffmpeg/ffserver/VDR pod KDE
 Name:		kde4-kmplayer
-Version:	0.11.0
-Release:	%{subver}.%{rel}
+Version:	0.11.2b
+Release:	%{rel}
 License:	GPL
 Group:		X11/Applications/Multimedia
-Source0:	http://kmplayer.kde.org/pkgs/%{origname}-%{version}-%{subver}.tar.bz2
-# Source0-md5:	6ad12e99addaf63e49529ea3f2a9e7f6
+Source0:	http://kmplayer.kde.org/pkgs/%{origname}-%{version}.tar.bz2
+# Source0-md5:	4dcaf4dc7fa2b2e9a2792ae7cd525bd0
 Patch0:		%{name}-unistd.patch
 URL:		http://kmplayer.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qt_ver}
@@ -59,7 +59,7 @@ Kmplayer Oxygen Icons
 Ikony kmplayer dla Oxygen
 
 %prep
-%setup -q -n %{origname}-%{version}-%{subver}
+%setup -q -n %{origname}-%{version}
 %patch0 -p1
 
 %build
@@ -96,15 +96,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/libkmplayerpart.so
 %{_datadir}/apps/kmplayer
 %{_datadir}/kde4/services/kmplayer_part.desktop
-%{_datadir}/kde4/services/kmplayer.desktop
+#%{_datadir}/kde4/services/kmplayer.desktop
 %{_iconsdir}/hicolor/*/apps/kmplayer.*
 %{_datadir}/apps/kmplayer/kmplayerpartui.rc
 %{_datadir}/apps/kmplayer/kmplayerui.rc
-%{_datadir}/apps/kmplayer/noise.gif
+#%{_datadir}/apps/kmplayer/noise.gif
 %{_datadir}/apps/kmplayer/pluginsinfo
-# XXX: find_lang?
-%{_docdir}/kde/HTML/en/doc/*
 
 %files icons-oxygen
 %defattr(644,root,root,755)
-%{_iconsdir}/oxygen/*/apps/kmplayer.*
+#%{_iconsdir}/oxygen/*/apps/kmplayer.*
