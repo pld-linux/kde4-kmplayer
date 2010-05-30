@@ -1,36 +1,24 @@
-%define		qt_ver		4.0.0
 %define		origname	kmplayer
-%define		subver		rc1
-%define		rel			1
+%define		kdever		4.4.4
+
 Summary:	A KDE MPlayer/Xine/ffmpeg/ffserver/VDR frontend
 Summary(pl.UTF-8):	Frontend dla programów MPlayer/Xine/ffmpeg/ffserver/VDR pod KDE
 Name:		kde4-kmplayer
 Version:	0.11.2b
-Release:	%{rel}
+Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://kmplayer.kde.org/pkgs/%{origname}-%{version}.tar.bz2
 # Source0-md5:	4dcaf4dc7fa2b2e9a2792ae7cd525bd0
 Patch0:		%{name}-unistd.patch
 URL:		http://kmplayer.kde.org/
-BuildRequires:	Qt3Support-devel >= %{qt_ver}
-BuildRequires:	QtCore-devel >= %{qt_ver}
-BuildRequires:	QtDBus-devel >= %{qt_ver}
-BuildRequires:	QtSvg-devel >= %{qt_ver}
-BuildRequires:	bzip2-devel
-BuildRequires:	cmake
-BuildRequires:	kde4-kdelibs-devel
-BuildRequires:	libstdc++-devel
+BuildRequires:	cmake >= 2.8.0
+BuildRequires:	kde4-kdebase-workspace-devel >= %{kdever}
+BuildRequires:	kde4-kdelibs-devel >= %{kdever}
 BuildRequires:	strigi-devel >= 0.5.10
 BuildRequires:	xorg-lib-libXft-devel
 BuildRequires:	xorg-lib-libXpm-devel
 BuildRequires:	xorg-lib-libXtst-devel
-Requires:	Qt3Support
-Requires:	QtCore
-Requires:	QtDBus
-Requires:	QtSvg
-Requires:	kde4-kdebase-core >= 4.0.0
-Requires:	kde4-kdelibs >= 4.0.0
 Requires:	mplayer
 Requires:	xorg-lib-libXft
 Requires:	xorg-lib-libXpm
