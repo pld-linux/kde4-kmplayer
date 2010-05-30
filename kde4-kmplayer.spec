@@ -66,15 +66,14 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_bindir}/kmplayer
+%attr(755,root,root) %{_bindir}/knpplayer
 %attr(755,root,root) %{_bindir}/kphononplayer
 %attr(755,root,root) %{_libdir}/libkdeinit4_kmplayer.so
 %attr(755,root,root) %{_libdir}/libkmplayercommon.so
 %attr(755,root,root) %{_libdir}/kde4/libkmplayerpart.so
 %{_datadir}/apps/kmplayer
+%{_datadir}/config/kmplayerrc
 %{_datadir}/kde4/services/kmplayer_part.desktop
-#%{_datadir}/kde4/services/kmplayer.desktop
+%{_desktopdir}/kde4/kmplayer.desktop
 %{_iconsdir}/hicolor/*/apps/kmplayer.*
-%{_datadir}/apps/kmplayer/kmplayerpartui.rc
-%{_datadir}/apps/kmplayer/kmplayerui.rc
-#%{_datadir}/apps/kmplayer/noise.gif
-%{_datadir}/apps/kmplayer/pluginsinfo
+%{_kdedocdir}/en/kmplayer
