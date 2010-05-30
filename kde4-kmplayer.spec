@@ -59,6 +59,9 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir}
 
+# remove unsupported langs
+rm -rf $RPM_BUILD_ROOT/%{_datadir}/locale/x-test
+
 %find_lang %{origname} --with-kde
 
 %clean
