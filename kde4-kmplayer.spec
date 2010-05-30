@@ -35,6 +35,7 @@ Requires:	mplayer
 Requires:	xorg-lib-libXft
 Requires:	xorg-lib-libXpm
 Requires:	xorg-lib-libXtst
+Obsoletes:	kde4-kmplayer-icons-oxygen
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -44,19 +45,6 @@ GUI.
 %description -l pl.UTF-8
 W pełni zintegrowany z KDE frontend dla programów
 MPlayer/Xine/ffmpeg/ffserver/VDR.
-
-%package icons-oxygen
-Summary:	Kmplayer Oxygen Icons
-Summary(pl.UTF-8):	Ikony kmplayer dla oxygen
-Group:		X11/Applications/Multimedia
-Requires:	%{name} = %{version}-%{release}
-Conflicts:	kde4-icons-oxygen
-
-%description icons-oxygen
-Kmplayer Oxygen Icons
-
-%description icons-oxygen -l pl.UTF-8
-Ikony kmplayer dla Oxygen
 
 %prep
 %setup -q -n %{origname}-%{version}
@@ -102,7 +90,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kmplayer/kmplayerui.rc
 #%{_datadir}/apps/kmplayer/noise.gif
 %{_datadir}/apps/kmplayer/pluginsinfo
-
-%files icons-oxygen
-%defattr(644,root,root,755)
-#%{_iconsdir}/oxygen/*/apps/kmplayer.*
