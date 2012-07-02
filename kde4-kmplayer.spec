@@ -4,25 +4,24 @@
 Summary:	A KDE MPlayer/Xine/ffmpeg/ffserver/VDR frontend
 Summary(pl.UTF-8):	Frontend dla programów MPlayer/Xine/ffmpeg/ffserver/VDR pod KDE
 Name:		kde4-kmplayer
-Version:	0.11.2b
+Version:	0.11.3c
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://kmplayer.kde.org/pkgs/%{origname}-%{version}.tar.bz2
-# Source0-md5:	4dcaf4dc7fa2b2e9a2792ae7cd525bd0
+# Source0-md5:	3e9ef221ca15d264e553706c6e611eb9
 Patch0:		%{name}-unistd.patch
 URL:		http://kmplayer.kde.org/
 BuildRequires:	cmake >= 2.8.0
+BuildRequires:	dbus-glib-devel
+BuildRequires:	gtk+2-devel
 BuildRequires:	kde4-kdebase-workspace-devel >= %{kdever}
 BuildRequires:	kde4-kdelibs-devel >= %{kdever}
-BuildRequires:	strigi-devel >= 0.5.10
 BuildRequires:	xorg-lib-libXft-devel
 BuildRequires:	xorg-lib-libXpm-devel
 BuildRequires:	xorg-lib-libXtst-devel
+BuildRequires:	xulrunner-devel
 Requires:	mplayer
-Requires:	xorg-lib-libXft
-Requires:	xorg-lib-libXpm
-Requires:	xorg-lib-libXtst
 Obsoletes:	kde4-kmplayer-icons-oxygen
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,27 +41,18 @@ MPlayer/Xine/ffmpeg/ffserver/VDR.
 install -d build
 cd build
 %cmake \
-	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
-	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-	-DSYSCONF_INSTALL_DIR=%{_sysconfdir} \
-%if "%{_lib}" == "lib64"
-	-DLIB_SUFFIX=64 \
-%endif
-	../
-
-%{__make}
+				.. \
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} -C build install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	kde_htmldir=%{_kdedocdir}
+        DESTDIR=$RPM_BUILD_ROOT
 
-# remove unsupported langs
-rm -rf $RPM_BUILD_ROOT/%{_datadir}/locale/x-test
+# Remove empty locale
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/sk/LC_MESSAGES/kmplayer.mo
 
-%find_lang %{origname} --with-kde
+%find_lang %{origname} --all-name --with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
