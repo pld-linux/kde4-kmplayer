@@ -4,12 +4,12 @@
 Summary:	A KDE MPlayer/Xine/ffmpeg/ffserver/VDR frontend
 Summary(pl.UTF-8):	Frontend dla programów MPlayer/Xine/ffmpeg/ffserver/VDR pod KDE
 Name:		kde4-kmplayer
-Version:	0.11.3c
+Version:	0.11.3d
 Release:	1
 License:	GPL
 Group:		X11/Applications/Multimedia
 Source0:	http://kmplayer.kde.org/pkgs/%{origname}-%{version}.tar.bz2
-# Source0-md5:	3e9ef221ca15d264e553706c6e611eb9
+# Source0-md5:	a652d00370e0940e6bd9cf51b32770c4
 Patch0:		%{name}-unistd.patch
 URL:		http://kmplayer.kde.org/
 BuildRequires:	cmake >= 2.8.0
