@@ -1,0 +1,18 @@
+--- kmplayer-0.11.3d/CMakeLists.txt~	2012-06-10 14:35:46.000000000 +0200
++++ kmplayer-0.11.3d/CMakeLists.txt	2019-10-04 10:20:48.688873058 +0200
+@@ -1,6 +1,7 @@
+ project(kmplayer)
+ 
+ cmake_policy(VERSION 2.6)
++cmake_minimum_required(VERSION 2.6)
+ 
+ SET(KMPLAYER_MAJOR_VERSION "0")
+ SET(KMPLAYER_MINOR_VERSION "11")
+@@ -12,6 +12,7 @@
+ find_package(KDE4 REQUIRED)
+ include (KDE4Defaults)
+ include (MacroLibrary)
++include(CheckIncludeFiles)
+ 
+ add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+ add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)

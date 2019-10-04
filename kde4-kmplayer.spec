@@ -11,6 +11,7 @@ Group:		X11/Applications/Multimedia
 Source0:	http://kmplayer.kde.org/pkgs/%{origname}-%{version}.tar.bz2
 # Source0-md5:	a652d00370e0940e6bd9cf51b32770c4
 Patch0:		%{name}-unistd.patch
+Patch1:		cmake.patch
 URL:		http://kmplayer.kde.org/
 BuildRequires:	cmake >= 2.8.0
 BuildRequires:	dbus-glib-devel
@@ -36,8 +37,10 @@ MPlayer/Xine/ffmpeg/ffserver/VDR.
 %prep
 %setup -q -n %{origname}-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
+#export CXXFLAGS="%{rpmcxxflags} -std=gnu++98"
 install -d build
 cd build
 %cmake \
