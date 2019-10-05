@@ -16,3 +16,14 @@
  
  add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
  add_definitions(-DQT_USE_FAST_CONCATENATION -DQT_USE_FAST_OPERATOR_PLUS)
+--- kmplayer-0.11.3d/src/CMakeLists.txt~	2012-06-10 14:35:46.000000000 +0200
++++ kmplayer-0.11.3d/src/CMakeLists.txt	2019-10-05 21:34:56.679770896 +0200
+@@ -13,7 +13,7 @@
+     MESSAGE("have cairo cflags:${optionalCFlags} ldflags:${optionalLinkFlags}")
+ endif (KMPLAYER_WITH_CAIRO)
+ 
+-add_definitions(-DQT3_SUPPORT -DKDE3_SUPPORT -DKMPLAYER_VERSION_STRING=\\"${KMPLAYER_VERSION_STRING}\\")
++add_definitions(-DQT3_SUPPORT -DKDE3_SUPPORT -DKMPLAYER_VERSION_STRING=\"${KMPLAYER_VERSION_STRING}\")
+ 
+ ADD_DEFINITIONS(${CAIROCFlags})
+ 
